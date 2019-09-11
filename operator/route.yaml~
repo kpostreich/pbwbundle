@@ -1,0 +1,32 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    app: plantsbywebspherev8-29xt
+    chart: ibm-open-liberty-1.9.0
+    heritage: Tiller
+    release: plantsbywebspherev8-29xtqpwqe628bmdn3zc21ya58
+  name: plantsbywebspherev8-29xt-http-clusterip
+  namespace: plantsbywebspherev8
+  resourceVersion: "885596"
+  selfLink: /apis/route.openshift.io/v1/namespaces/plantsbywebspherev8/routes/plantsbywebspherev8-29xt-http-clusterip
+  uid: d19d183d-d334-11e9-b299-063acb0dd0dc
+spec:
+  host: infra.icp4app.169.55.4.145.nip.io
+  path: /PlantsByWebSphere
+  port:
+    targetPort: http-service-liberty-clusterip
+  to:
+    kind: Service
+    name: plantsbywebspherev8-29xt-http-clusterip
+    weight: 100
+  wildcardPolicy: None
+status:
+  ingress:
+  - conditions:
+    - lastTransitionTime: 2019-09-09T19:05:42Z
+      status: "True"
+      type: Admitted
+    host: infra.icp4app.169.55.4.145.nip.io
+    routerName: router
+    wildcardPolicy: None
